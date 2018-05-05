@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#define TAM 1
 #define TAM_NOME 50+1
 #define TAM_CEP 9+1
 #define BUF 252
@@ -47,22 +48,23 @@ int cmp_salario_pessoa(pessoa * p, void * alvo);
 
 int main()
 {
-	pessoa * p = NULL;
+//	pessoa * p = NULL;  
+	pessoa p[TAM]; //COMENTA QUANDO FOR USAR O MALLOC
 	int a = 13, b = 21, tam;
 	double c = 450.8, d = 110;
 
-	printf("Digite a quantidade de pessoas: ");
-	scanf("%d%*c", &tam);
+	/*printf("Digite a quantidade de pessoas: ");
+	scanf("%d%*c", &tam);*/
 
-	p = (pessoa*)malloc(tam * sizeof(pessoa));
+	/*p = (pessoa*)malloc(tam * sizeof(pessoa));*/
 
-	if (p == NULL) 
+	/*if (p == NULL) 
 	{
 		printf("\nEspaço de memoria insuficiente...");
 		return 1;
-	}
+	}*/
 
-	percorre(p, tam, capta_pessoa);
+	/*percorre(p, tam, capta_pessoa);
 	percorre(p, tam, imprime_pessoa);
 
 	if (percorre_cmp(p, tam, &a, cmp_idade_pessoa))
@@ -75,11 +77,24 @@ int main()
 		printf("\nPessoa com idade %.2lf encontrada!!\n", c);
 
 	if (percorre_cmp(p, tam, &d, cmp_salario_pessoa))
+		printf("\nPessoa com idade %.2lf encontrada!!\n", d);*/
+
+	/*free(p);
+	p = NULL;*/
+	percorre(p, TAM, capta_pessoa); //COMENTA QUANDO FOR USAR O MALLOC
+	percorre(p, TAM, imprime_pessoa);
+
+	if (percorre_cmp(p, TAM, &a, cmp_idade_pessoa))
+		printf("\nPessoa com idade %d encontrada!!\n", a);
+
+	if (percorre_cmp(p, TAM, &b, cmp_idade_pessoa))
+		printf("\nPessoa com idade %d encontrada!!\n", b);
+
+	if (percorre_cmp(p, TAM, &c, cmp_salario_pessoa))
+		printf("\nPessoa com idade %.2lf encontrada!!\n", c);
+
+	if (percorre_cmp(p, TAM, &d, cmp_salario_pessoa))
 		printf("\nPessoa com idade %.2lf encontrada!!\n", d);
-
-	free(p);
-	p = NULL;
-
 	return 0;
 }
 

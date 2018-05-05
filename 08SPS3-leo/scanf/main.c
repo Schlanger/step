@@ -14,7 +14,7 @@ int main() {
 
 	int i;
 	printf("\nDigite um numero: ");
-	scanf("%d", i);
+	scanf("%d", &i);
 	printf("%d\n", i);
 
 	char cont2[T];
