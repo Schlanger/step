@@ -22,6 +22,10 @@ bool evento::operator < (const evento & p_evento) const {
 	return (m_momento < p_evento.m_momento);
 }
 
+bool evento::operator == (const evento & p_evento) const {
+	return (m_momento == p_evento.m_momento);
+}
+
 bool evento::eh_agora(time_t p_time) const {
 	return (m_momento == p_time);
 }

@@ -18,19 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="evento.h" />
-    <ClInclude Include="eventos.h" />
-    <ClInclude Include="momento.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="evento.cpp" />
-    <ClCompile Include="momento.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{F8761B4E-DE69-4950-9291-A0265AA3D493}</ProjectGuid>
-    <RootNamespace>bus</RootNamespace>
+    <ProjectGuid>{D35541CA-4384-4393-8F68-65FF3C15F01C}</ProjectGuid>
+    <RootNamespace>testeventos</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -79,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
@@ -89,7 +80,7 @@
       <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
@@ -131,6 +122,16 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\bus\evento.cpp" />
+    <ClCompile Include="..\bus\momento.cpp" />
+    <ClCompile Include="main_eventos.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\bus\evento.h" />
+    <ClInclude Include="..\bus\eventos.h" />
+    <ClInclude Include="..\bus\momento.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
