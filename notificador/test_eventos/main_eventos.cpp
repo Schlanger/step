@@ -15,7 +15,7 @@ bool test1() {
 	eventos _eventos;
 
 	_eventos.insert(evento("remedio", momento(12, 45)));
-	_eventos.insert(evento("cerveja", momento(18, 50)));
+	_eventos.insert(evento("cerveja", momento(18, 57)));
 	_eventos.insert(evento("cafe", momento(7, 23)));
 
 	eventos::const_iterator _found = _eventos.find(_procurado);

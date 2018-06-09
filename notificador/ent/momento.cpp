@@ -1,6 +1,6 @@
 #include "momento.h"
 
-using namespace notificador::bus;
+using namespace notificador::ent;
 
 momento::
 momento(int p_hr, int p_min) {

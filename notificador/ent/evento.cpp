@@ -1,6 +1,6 @@
 #include "evento.h"
 
-using namespace notificador::bus;
+using namespace notificador::ent;
 
 evento::evento(const string & p_desc, const momento & p_momento)
 	: m_desc(p_desc)
