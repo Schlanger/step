@@ -18,6 +18,12 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="notificador.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="notificador.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{F8761B4E-DE69-4950-9291-A0265AA3D493}</ProjectGuid>

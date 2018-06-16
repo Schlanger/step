@@ -2,6 +2,8 @@
 #include <set>
 #include <iostream>
 #include <ctime>
+#include <thread>
+#include <chrono>
 
 #include <ent/eventos.h>
 #include <ent/evento.h>
@@ -71,37 +73,44 @@ bool test2() {
 
 bool test3() {
 
-	//preencher eventos
+	// preencher eventos
 	eventos _eventos;
-
 	_eventos.insert(evento("remedio", momento(12, 45)));
-	_eventos.insert(evento("cerveja", momento(12, 05)));
+	_eventos.insert(evento("cerveja", momento(12, 60)));
 	_eventos.insert(evento("cafe", momento(7, 23)));
 
 	// loop em eventos
 	//     se o momento do evento corrente == ao momento atual
 	//         imprime um aviso
-	int i = 0;
-	eventos::iterator it;
-	
-	while(i!=1)
-	{
+
+	//uint16_t _count = 0;
+	while (true) {
 		// timestamp atual
 		time_t _time = time(NULL);
 
 		// converter para struct tm
-		struct tm * _tm = localtime(&_time); 
-
+		struct tm * _tm = localtime(&_time);
 
 		// criar uma variável 'momento'
-		momento _procurado(_tm->tm_hour, _tm->tm_sec);
+		momento _procurado(_tm->tm_hour, _tm->tm_min);
 
-		for (it = cbegin(_eventos); it!=cend(_eventos); it++)
-		{
-
+		//std::cout << "\n\n\n" << _count << std::endl;
+		eventos::const_iterator _end = _eventos.end();
+		for (eventos::const_iterator _ite = _eventos.begin();
+			_ite != _end;
+			++_ite) {
+			if (_ite->get_alarme() == _procurado) {
+				std::cout << "ALARME: " << _ite->get_desc() << std::endl;
+			}
+			else if (_procurado < _ite->get_alarme()) {
+				// não vai mais achar
+				break;
+			}
 		}
-		i++;
+		//++_count;
+		std::this_thread::sleep_for(std::chrono::minutes(1));
 	}
+
 
 	return true;
 }
