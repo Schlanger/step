@@ -22,9 +22,9 @@ public:
 
 namespace notificador {
 	namespace bus {
-		class notificador {
+		class aviso {
 		public:
-			notificador(const eventos & p_eventos)
+			aviso(const eventos & p_eventos)
 				:m_eventos(p_eventos) {}
 
 			void start(i_exibidor * p_exibidor);

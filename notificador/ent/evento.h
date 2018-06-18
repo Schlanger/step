@@ -8,6 +8,7 @@
 #include <ent/momento.h>
 
 using namespace std;
+using namespace notificador::ent;
 
 namespace notificador {
 	namespace ent {

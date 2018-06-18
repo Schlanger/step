@@ -23,17 +23,13 @@ bool test1() {
 
 	if (_found == _eventos.end()) {
 		std::cout << "Nao achei evento para "
-			<< _procurado.get_alarme().get_hr()
-			<< ":"
-			<< _procurado.get_alarme().get_mm()
+			<< _procurado.get_alarme()
 			<< std::endl;
 		return false;
 	}
 
 	std::cout << "Evento para "
-		<< _found->get_alarme().get_hr()
-		<< ":"
-		<< _found->get_alarme().get_mm()
+		<< _found->get_alarme()
 		<< " econtrado: "
 		<< _found->get_desc()
 		<< std::endl;
@@ -54,17 +50,13 @@ bool test2() {
 
 	if (_found == _eventos.end()) {
 		std::cout << "Nao achei evento para "
-			<< _procurado.get_alarme().get_hr()
-			<< ":"
-			<< _procurado.get_alarme().get_mm()
+			<< _procurado.get_alarme()
 			<< std::endl;
 		return true;
 	}
 
 	std::cout << "Evento para "
-		<< _found->get_alarme().get_hr()
-		<< ":"
-		<< _found->get_alarme().get_mm()
+		<< _found->get_alarme()
 		<< " econtrado: "
 		<< _found->get_desc()
 		<< std::endl;

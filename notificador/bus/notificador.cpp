@@ -1,7 +1,8 @@
 #include<bus/notificador.h>
 
+using namespace notificador::bus;
 
-void notificador::bus::notificador::start(i_exibidor * p_exibidor) {
+void aviso::start(i_exibidor * p_exibidor) {
 	std::stringstream _stream;
 	while (true) {
 		// timestamp atual

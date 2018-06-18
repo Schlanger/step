@@ -2,8 +2,7 @@
 
 using namespace notificador::ent;
 
-momento::
-momento(int p_hr, int p_min) {
+momento::momento(int p_hr, int p_min) {
 	if (p_hr > 23) {
 		throw runtime_error("hora maior que 23");
 	}
@@ -62,6 +61,30 @@ bool momento::operator==(time_t p_time) const {
 		);
 }
 
+bool momento::operator > (const momento & p_momento) const {
+	if (m_hr > p_momento.m_hr) {
+		return true;
+	}
+
+	if ((m_hr == p_momento.m_hr) &&
+		(m_min > p_momento.m_min)) {
+		return true;
+	}
+	return false;
+}
+
+bool momento::operator >= (const momento & p_momento) const {
+	if (m_hr > p_momento.m_hr) {
+		return true;
+	}
+
+	if ((m_hr == p_momento.m_hr) &&
+		(m_min >= p_momento.m_min)) {
+		return true;
+	}
+	return false;
+}
+
 bool momento::operator < (const momento & p_momento) const {
 	if (m_hr < p_momento.m_hr) {
 		return true;
@@ -69,6 +92,18 @@ bool momento::operator < (const momento & p_momento) const {
 
 	if ((m_hr == p_momento.m_hr) &&
 		(m_min < p_momento.m_min)) {
+		return true;
+	}
+	return false;
+}
+
+bool momento::operator <= (const momento & p_momento) const {
+	if (m_hr < p_momento.m_hr) {
+		return true;
+	}
+
+	if ((m_hr == p_momento.m_hr) &&
+		(m_min <= p_momento.m_min)) {
 		return true;
 	}
 	return false;
