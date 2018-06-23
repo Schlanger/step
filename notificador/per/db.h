@@ -1,7 +1,7 @@
 #ifndef _DB_H_
 #define _DB_H_
 
-#define NOME_ARQ "xpto"
+#define NOME_ARQ "alarme.txt"
 
 #include<fstream>
 #include<string>
@@ -32,6 +32,9 @@ namespace notificador {
 			db(const std::string & p_path);
 
 			bool insere(const ent::evento & p_evento);
+
+			bool carrega(ent::eventos & p_eventos);
+
 		private:
 			string m_file;
 		};
